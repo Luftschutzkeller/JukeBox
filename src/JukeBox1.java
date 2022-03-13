@@ -9,7 +9,7 @@ public class JukeBox1 {
         new JukeBox1().go();
     }
 
-    class ArtistCompare implements Comparator<Song> {
+    static class ArtistCompare implements Comparator<Song> {
         public int compare(Song one, Song two) {
             return one.getArtist().compareTo(two.getArtist());
         }
@@ -20,6 +20,8 @@ public class JukeBox1 {
         System.out.println(songList);
         Collections.sort(songList);
         System.out.println(songList);
+        HashSet<Song> songSet = new HashSet<Song>(songList);
+        System.out.println(songSet);
 
         ArtistCompare artistCompare = new ArtistCompare();
         songList.sort(artistCompare);
